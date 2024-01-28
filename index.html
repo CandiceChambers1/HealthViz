@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /*body {*/
+        /*    display: flex;*/
+        /*    justify-content: center;*/
+        /*    align-items: center;*/
+        /*    height: 100vh;*/
+        /*    margin: 0;*/
+        /*}*/
+
+        .face {
+            width: 300px;
+            height: 300px;
+            background-color: #ffd700; /* face color (you can change this) */
+            border-radius: 50%;
+            position: relative;
+        }
+
+        .eye {
+            width: 52px;
+            height: 52px;
+            background-color: #000; /* eye color (you can change this) */
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .left-eye {
+            top: 25%;
+            left: 25%;
+        }
+
+        .right-eye {
+            top: 25%;
+            right: 25%;
+        }
+
+        .mouth {
+            width: 215px;
+            height: 90px;
+            background-color: #ff6347; /* mouth color (you can change this) */
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            top: 50%;
+            transform: translateX(-50%);
+        }
+    </style>
+    <title>HTML Face</title>
+</head>
+<body>
+    <label for="myRightEyeSize">Steps:</label>
+    <input type="number" id="myRightEyeSize" value="0"><br><br>
+
+    <label for="myFaceSize">Move(cal):</label>
+    <input type="number" id = "myFaceSize" value="0"><br><br>
+
+<!--    // colour -->
+    <label for="myFaceColor">Distance(mi):</label>
+    <input type="number" id = "myFaceColor" value="0"><br><br>
+
+<!--    color-->
+    <label for="myMouthColor">Flight Climbed:</label>
+    <input type="number" id = "myMouthColor" value="0"><br><br>
+
+
+    <label for="myMouthSize">Water Consumption(oz):</label>
+    <input type="number" id = "myMouthSize" value="0"><br><br>
+
+    <label for="myLeftEyeSize">Exercise(min):</label>
+    <input type="number" id = "myLeftEyeSize" value="0"><br><br>
+
+    <label for="myEyesColor">Stand(hrs):</label>
+    <input type="number" id = "myEyesColor" value="0"><br><br>
+
+
+
+    <button onclick="changeFace()">Change Face</button><br><br>
+
+    <div id = "myFace" style = "background-color: gold; width: 300px; height: 300px" class="face">
+        <div id = "myLeftEye" style = "width: 52px; height: 52px; background-color: #000000" class="eye left-eye"></div>
+        <div id = "myRightEye" style = "width: 52px; height: 52px; background-color: #000000" class="eye right-eye"></div>
+        <div id = "myMouth" style = "width: 215px; height: 90px; background-color: #ff6347;" class="mouth"></div>
+<!--        <div id = "myEyes" style = "background-color: #000" class = "eye"></div>-->
+    </div>
+    <script>
+        // document.getElementById('myFace').style.backgroundColor = '#3498db'; // Change to your desired color
+
+        // changeFace();
+        function changeFaceColor(n) {
+            console.log(n + "Face Color");
+            if(n == 0){
+                console.log("hello");
+                document.getElementById('myFace').style.backgroundColor = '#008000';
+            } else if((n > 0) && (n < 2.5)){
+                document.getElementById('myFace').style.backgroundColor = '#ADFF2F';
+            }else if ((n >= 2.5) && ( n <= 5)){
+                document.getElementById('myFace').style.backgroundColor = '#FFD700';
+            } else{
+                document.getElementById('myFace').style.backgroundColor = '#FF0000';
+            }
+            // let faceColor = document.getElementById('myFace').style.backgroundColor; // Change to your desired color
+            // console.log("Hello");
+            // console.log(document.getElementById("myFace").style.backgroundColor);
+            // if (faceColor === "gold") {
+            //     console.log("hello");
+            //     document.getElementById('myFace').style.backgroundColor = 'blue';
+            // }
+        }
+
+        function changeFaceSize(n){
+                        console.log(n +"Face Size");
+            if(n == 0){
+                document.getElementById('myFace').style.width = '100px';
+                document.getElementById('myFace').style.height = '100px';
+            } else if ((n > 0) && (n <500)){
+                document.getElementById('myFace').style.width = '200px';
+                document.getElementById('myFace').style.height = '200px';
+            } else if (n >= 500){
+                document.getElementById('myFace').style.width = '300px';
+                document.getElementById('myFace').style.height = '300px';
+
+            }
+        }
+
+          function changeRightEye(n){
+              console.log(n +"Right Eye");
+            if(n == 0){
+                document.getElementById('myRightEye').style.width = '10px';
+                document.getElementById('myRightEye').style.height = '10px';
+            } else if ((n > 0) && (n <10000)){
+                document.getElementById('myRightEye').style.width = '25px';
+                document.getElementById('myRightEye').style.height = '25px';
+            } else if (n >= 10000){
+                document.getElementById('myRightEye').style.width = '52px';
+                document.getElementById('myRightEye').style.height = '52px';
+
+            }
+        }
+
+        function changeLeftEye(n){
+                        console.log(n +"Left Eye");
+            if(n == 0){
+                document.getElementById('myLeftEye').style.width = '10px';
+                document.getElementById('myLeftEye').style.height = '10px';
+            } else if ((n > 0) && (n < 60)){
+                document.getElementById('myLeftEye').style.width = '25px';
+                document.getElementById('myLeftEye').style.height = '25px';
+            } else if (n >= 60){
+                document.getElementById('myLeftEye').style.width = '52px';
+                document.getElementById('myLeftEye').style.height = '52px';
+            }
+        }
+
+        function changeEyeColor(n){
+                        console.log(n +"EyeColor");
+            if(n == 0) {
+                document.getElementById('myRightEye').style.backgroundColor = '#3CB371';
+                document.getElementById('myLeftEye').style.backgroundColor = '#3CB371';
+            }else if ((n > 0) && (n < 8)){
+                document.getElementById('myRightEye').style.backgroundColor = '#7FFFD4';
+                document.getElementById('myLeftEye').style.backgroundColor = '#7FFFD4';
+            } else if (n >= 8){
+                document.getElementById('myRightEye').style.backgroundColor = '#000000';
+                document.getElementById('myLeftEye').style.backgroundColor = '#000000';
+            }
+        }
+
+        function changeMouthColor(n){
+                        console.log(n +"Mouth Color");
+            if(n == 0){
+                document.getElementById('myMouth').style.backgroundColor = '#FFF5EE';
+            } else if ((n > 0) && (n <=5)){
+                document.getElementById('myMouth').style.backgroundColor = '#D87093';
+            } else if (n > 5){
+                document.getElementById('myMouth').style.backgroundColor = '#ff6347';
+            }
+
+        }
+
+        function changeMouthSize(n){
+                        console.log(n +"Mouth Size");
+            if(n == 0){
+                document.getElementById('myMouth').style.width = "50px";
+                document.getElementById('myMouth').style.height = "20px";
+            } else if ((n > 0) && (n < 32)){
+                document.getElementById('myMouth').style.width = "100px";
+                document.getElementById('myMouth').style.height = "40px";
+            } else if (n >=32){
+                document.getElementById('myMouth').style.width = "215px";
+                document.getElementById('myMouth').style.height = "90px";
+            }
+        }
+        function changeFace() {
+            var faceSize = document.getElementById('myFaceSize').value;
+            changeFaceSize(faceSize);
+            var faceColor = document.getElementById('myFaceColor').value;
+            changeFaceColor(faceColor);
+
+            var rightEye = document.getElementById('myRightEyeSize').value;
+            changeRightEye(rightEye);
+
+            var leftEye = document.getElementById('myLeftEyeSize').value;
+            changeLeftEye(leftEye);
+
+            var eye = document.getElementById('myEyesColor').value;
+            changeEyeColor(eye);
+
+            var mouthColor = document.getElementById('myMouthColor').value;
+            changeMouthColor(mouthColor);
+
+            var waterComsump = document.getElementById('myMouthSize').value;
+            changeMouthSize(waterComsump);
+
+
+            // var color = document.getElementById('color').value;
+            // var size = document.getElementById('size').value + 'px';
+            // var positionX = document.getElementById('positionX').value + 'px';
+            // var positionY = document.getElementById('positionY').value + 'px';
+            // var face = document.getElementById('face');
+
+            // face.style.backgroundColor = color;
+            // face.style.width = size;
+            // face.style.height = size;
+            // face.style.left = positionX;
+            // face.style.top = positionY;
+        }
+
+
+
+    </script>
+<!--    <button onclick="getFaceColor()">Change Color </button>-->
+</body>
+</html>
